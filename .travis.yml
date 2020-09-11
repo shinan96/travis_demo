@@ -1,0 +1,19 @@
+branches:
+  only:
+    - master
+language: node_js
+
+node_js:
+  - 'v12.16.2'
+cache: npm
+
+before_install:
+  - git config --global user.name 'shinan'
+  - git config --global user.email nan.shi1@onesmart.org
+
+install:
+  - npm install
+  - npm run build
+
+script:
+  - git log
